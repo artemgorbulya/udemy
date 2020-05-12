@@ -1,23 +1,42 @@
-let money = prompt("Ваш бюджет на месяц?", "");
-let time = prompt("Введите дату в формате YYYY-MM-DD", "");
+/* Задание на урок:
 
-let appData = {
-  budget: money,
-  timeData: time,
-  expenses : {},
-  optionalExpenses : {},
-  income : [],
-  savings : false,
+1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
+'Сколько фильмов вы уже посмотрели?'
+
+2) Создать объект personalMovieDB и в него поместить такие свойства:
+    - count - сюда передается ответ на первый вопрос
+    - movies - в это свойство поместить пустой объект
+    - actors - тоже поместить пустой объект
+    - genres - сюда поместить пустой массив
+    - privat - в это свойство поместить boolean(логическое) значение false
+
+3) Задайте пользователю по два раза вопросы:
+    - 'Один из последних просмотренных фильмов?'
+    - 'На сколько оцените его?'
+Ответы стоит поместить в отдельные переменные
+Записать ответы в объект movies в формате:
+    movies: {
+        'logan': '8.1'
+    }
+
+Проверить, чтобы все работало без ошибок в консоли */
+
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '5');
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false,
 };
 
-let stat1 = prompt("Введите обязательную статью расходов в этом месяце", '');
-let	value1 = prompt("Во сколько обойдется?", '');
-let stat2 = prompt("Введите обязательную статью расходов в этом месяце", '');
-let	value2 = prompt("Во сколько обойдется?", '');
+const a = prompt('Один из последних просмотренных фильмов?',''),
+      b = prompt('На сколько оцените его?',''),
+      c = prompt('Один из последних просмотренных фильмов?',''),
+      d = prompt('На сколько оцените его?','');
 
-appData.expenses[stat1] = value1;
-appData.expenses[stat2] = value2;
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
 
-let budget1Day = money / 30;
-
-alert(budget1Day);
+console.log(personalMovieDB);
